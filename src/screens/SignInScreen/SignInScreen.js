@@ -3,28 +3,40 @@ import { View, Text, Image, StyleSheet, useWindowDimensions, TextInput, ScrollVi
 import Logo from '../../../assets/images/Logo.png';
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
+import { useNavigation } from "@react-navigation/native";
+
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const{height} = useWindowDimensions();
+    const navigation = useNavigation();
+
     const onSignInPressed = () =>{
-        console.warn("Sign In");
+        console.warn("Signing in");
+    };
+      
+    
+
+    const OnCreatePressed = () =>{
+    navigation.navigate("Sign Up");
+    } 
+    
+
+    const onForgotPasswordPressed = () =>{ 
+        navigation.navigate("Forgot Password");
     };
 
-    const onForgotPasswordPressed = () =>{
-        console.warn('onForgotPasswordPressed'); 
-    };
     const onSignInFacebook = () =>{
-console.warn('onSignInFacebook')
+        console.warn('Signing in with Facebook')
     };
     const onSignInGoogle = () =>{
-console.warn('onSignInGoogle')
+        console.warn('Signing in with Google')
     };
     return (
       <ScrollView>
       <View style={styles.root}>
-        <Text styles={styles.text}>The CookBook</Text>
+        <Text style={styles.text}>The CookBook</Text>
         <Image 
         source={Logo} 
         style={[styles.Logo, {height: height*0.25}]} 
@@ -40,8 +52,16 @@ console.warn('onSignInGoogle')
         secureTextEntry={true}
         />
         <CustomButton text="Sign In" onPress={onSignInPressed}/>
-        <CustomButton text="Forgot Password" onPress={onForgotPasswordPressed} type="TERTIARY"/>
         
+        <Text style={styles.forgot} onPress={onForgotPasswordPressed}>Forgot Password?</Text>
+        
+        
+        <Text style={styles.para}>New here?
+        <Text style={styles.extra} onPress={OnCreatePressed}> Create account</Text> 
+        
+        </Text>
+        
+        {/*
         <CustomButton text="Sign In with Facebook" 
         onPress={onSignInFacebook}
         bgColor="#e7eaf4"
@@ -53,6 +73,7 @@ console.warn('onSignInGoogle')
         bgColor="#f8eeec"
         fgColor="#dd4d44"
         />
+        */}
 
       </View>
       </ScrollView>
@@ -72,6 +93,17 @@ const styles = StyleSheet.create({
     },
     text:{
         fontSize: 40,
+    },
+    extra:{
+        color:'#ff0000'
+    },
+    para:{
+        color:'#000000',
+    },
+    forgot:{
+        color:'#6372FB',
+        padding:20,
+        textDecorationLine:"underline"
     }
 });
   export default SignInScreen
