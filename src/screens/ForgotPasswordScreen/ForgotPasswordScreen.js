@@ -8,12 +8,45 @@ import { useNavigation } from "@react-navigation/native";
 
 const ForgotPasswordScreen = () => {
     const [username, setUsername] = useState('');
+    const [emailValidError, setEmailValidError] = useState('');
+    const [emailverified, setEmailVerified]=useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
     const navigation = useNavigation();
+
+    const handleValidEmail = val => {
+      let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      
+      if (val.length === 0) {
+        setEmailValidError('');
+        setEmailVerified(false)
+      } else if (reg.test(val) === false) {
+
+        setEmailValidError('Enter valid email address');
+        setEmailVerified(false)
+      } else if (reg.test(val) === true) {
+        setEmailValidError('');
+        setEmailVerified(true);
+        
+      }
+      };
     const onPressLearnMore = () =>{
-        console.warn("Email sent");
+      let signinerror = {field:'', message: ''};
+
+      if(email==='')
+        {
+          alert("Field is blank")
+        }
+          else if(emailverified===false)
+          {
+            alert("Wrong email format");
+          }
+        else {
+            
+            console.warn("Reset password email sent")
+          
+        }
     }
     const onRegisterPressed = () =>{
         console.warn("Creating new account");
@@ -23,17 +56,19 @@ const ForgotPasswordScreen = () => {
       <ScrollView>
       <View style={styles.root}>
         <Text style={styles.title}>RESET PASSWORD</Text>
-        <CustomInput 
-        placeholder="Email ID" 
-        value={username} 
-        setValue={setUsername} />
+        <TextInput
+    style={styles.input}
+    placeholder="Email"
+    value={email}
+    autoCorrect={false}
+    autoCapitalize="none"
+    onChangeText={value => {
+      setEmail(value);
+      handleValidEmail(value);
+    }}
+  />
 
-        <CustomInput 
-        placeholder="Re-enter Email Id" 
-        value={password} 
-        setValue={setPassword} 
-        secureTextEntry={true}
-        />
+{emailValidError ? <Text style={styles.error}>{emailValidError}</Text> : null}
 
 
         <Button
@@ -69,6 +104,20 @@ const styles = StyleSheet.create({
     root: {
        alignItems:'center',
        padding: 20,
+    },
+    input:{
+      color:'black',
+        backgroundColor: '#f9f9f9',
+        width:'100%',
+        borderColor: '#c6c6c6',
+        borderRadius: 15,
+        borderWidth: 2,
+        paddingHorizontal: 20,
+        marginVertical:15,
+    },
+    error:{
+      color:'red',
+      padding:10
     },
     
 

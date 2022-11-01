@@ -6,9 +6,9 @@ import { View, Text, TextInput, StyleSheet } from 'react-native';
             <TextInput 
             value={value}
             onChangeText={setValue}
-            placeholder={placeholder}
+            placeholder={placeholder} 
             style={styles.input}
-            secureTextEntry={secureTextEntry} 
+            secureTextEntry={secureTextEntry}
             />
         </View>
     );

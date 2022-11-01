@@ -7,54 +7,54 @@ import { useNavigation } from "@react-navigation/native";
 
 
 
+
 const ProfileScreen = () => {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [passwordConfirm, setPasswordConfirm] = useState('');
+    const [name, setName] = useState('');
+    const [birth, setBirth] = useState('');
+    const [age, setAge] = useState('');
+    const [phonenumber, setPhonenumber] = useState('');
 
     const navigation = useNavigation();
     
     const onProfilePressed = () => {
-        console.warn("Profile Updated");
+        navigation.navigate("Sign Up");
     };
     const onLinkPressed = () =>{
         navigation.navigate("Sign In");
     };
+
     return (
       <ScrollView>
       <View style={styles.root}>
         <Text style={styles.title}>Profile Details</Text>
+        <Text>Before creating an account please fill in your personal details</Text>
         <CustomInput 
         placeholder="Name" 
-        value={username} 
-        setValue={setUsername} 
+        value={name} 
+        setValue={setName} 
         />
 
         <CustomInput 
         placeholder="Date of Birth" 
-        value={password} 
-        setValue={setPassword} 
+        value={birth} 
+        setValue={setBirth} 
         />
 
         <CustomInput 
         placeholder="Age" 
-        value={passwordConfirm} 
-        setValue={setPasswordConfirm} 
+        value={age} 
+        setValue={setAge} 
         />
 
         <CustomInput 
         placeholder="Phone Number" 
-        value={username} 
-        setValue={setUsername} 
+        value={phonenumber} 
+        setValue={setPhonenumber} 
         />
-
-
-
-        <Button
+<Button
         onPress={onProfilePressed}
-        title='Update profile details'
-        color='#1958E8'
+        title='SAVE DETAILS'
+        color='#22734A'
         />
         <Text style={styles.nav} onPress={onLinkPressed}>Go back to sign in page</Text>
 
@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
         color:"#ff0000",
         fontSize:15,
         marginTop:15,
+        padding:10
     }
 });
   export default ProfileScreen;

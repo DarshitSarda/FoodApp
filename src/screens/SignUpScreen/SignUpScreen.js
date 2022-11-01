@@ -13,7 +13,7 @@ const SignUpScreen = () => {
     const [passwordConfirm, setPasswordConfirm] = useState('');
     const navigation = useNavigation();
     const onRegisterPressed = () =>{
-        console.warn("Creating new account");
+        navigation.navigate("Sign In");
     };
     const onDetailsPressed = () =>{
           navigation.navigate("Profile Screen");
@@ -80,15 +80,7 @@ console.warn('Signing in with Google')
         />
         */}
 
-        <Text style={styles.para}>Have an account?
-        <Text style={styles.extra} onPress={onlinkPressed}> Sign In</Text> 
         
-        </Text>
-
-        <Text style={styles.new}>Before creating an account fill in your  
-        <Text style={styles.details} onPress={onDetailsPressed}> Profile details</Text> 
-        
-        </Text>
 
 
 
