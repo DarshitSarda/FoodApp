@@ -10,16 +10,14 @@ import ProfileScreen from "../screens/ProfileScreen";
 import BottomNav from "../screens/BottomNav";
 
 const Stack = createNativeStackNavigator();
-const Navigation = () =>{
+const AppStack = () =>{
     return(
         
             <Stack.Navigator screenOptions={{headerShown: false}}>
-                <Stack.Screen name="Sign In" component={SignInScreen} />
-                <Stack.Screen name="Sign Up" component={SignUpScreen} />
-                <Stack.Screen name="Forgot Password" component={ForgotPasswordScreen}/>
+            <Stack.Screen name="Bottom Nav" component={BottomNav}/>
             </Stack.Navigator>
         
     )
 }
 
-export default Navigation;
+export default AppStack;

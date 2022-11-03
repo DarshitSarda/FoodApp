@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from "react-native-vector-icons/Ionicons";
 import CuisineScreen from "../CuisineScreen";
 import FavouriteScreen from "../FavouriteScreen";
 import SupportScreen from "../SupportScreen";
@@ -21,14 +21,14 @@ const BottomNav = () => {
               if (route.name === 'Home') {
                 iconName = focused
                   ? 'home'
-                  : 'home';
+                  : 'home-outline';
               } else if (route.name === 'Cuisines') {
-                iconName = focused ? 'cutlery' : 'glass';
+                iconName = focused ? 'fast-food' : 'fast-food-outline';
               }
               else if (route.name === 'Support') {
-                iconName = focused ? 'cogs' : 'cog';}
+                iconName = focused ? 'cog-sharp' : 'cog-outline';}
                 else if (route.name === 'Favourites') {
-                    iconName = focused ? 'heart' : 'heart-o';}
+                    iconName = focused ? 'heart' : 'heart-outline';}
       
               // You can return any component that you like here!
               return <Icon name={iconName} size={size} color={color} />;

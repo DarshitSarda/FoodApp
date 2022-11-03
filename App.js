@@ -18,12 +18,13 @@ import CuisineScreen from './src/screens/CuisineScreen';
 import FavouriteScreen from './src/screens/FavouriteScreen';
 import SupportScreen from './src/screens/SupportScreen';
 import BottomNav from './src/screens/BottomNav';
+import Providers from './src/navigation/Providers';
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
 const App = () => {
   return (
-  <Navigation/> 
+  <Providers/> 
   );
 };
 

@@ -136,7 +136,7 @@ const SignInScreen = () => {
             navigation.navigate("Bottom Nav");
         }*/}
     const onCreatePressed = () =>{
-    navigation.navigate("Profile Screen");
+    navigation.navigate("Sign Up");
     } 
     const onForgotPasswordPressed = () =>{ 
         navigation.navigate("Forgot Password");

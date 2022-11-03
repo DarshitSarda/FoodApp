@@ -3,8 +3,7 @@ import { View, Text, StyleSheet, TextInput, ScrollView, Button} from 'react-nati
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import { useNavigation } from "@react-navigation/native";
-
-
+import Icon from "react-native-vector-icons/FontAwesome";
 
 
 
@@ -33,12 +32,14 @@ const ProfileScreen = () => {
         value={name} 
         setValue={setName} 
         />
+          
+          
+          <CustomInput 
+            placeholder="Date of Birth" 
+            value={birth} 
+            setValue={setBirth} 
+          />
 
-        <CustomInput 
-        placeholder="Date of Birth" 
-        value={birth} 
-        setValue={setBirth} 
-        />
 
         <CustomInput 
         placeholder="Age" 
@@ -51,7 +52,8 @@ const ProfileScreen = () => {
         value={phonenumber} 
         setValue={setPhonenumber} 
         />
-<Button
+        
+        <Button
         onPress={onProfilePressed}
         title='SAVE DETAILS'
         color='#22734A'
@@ -72,10 +74,6 @@ const ProfileScreen = () => {
         fgColor="#dd4d44"
         />
         */}
-        
-
-
-
       </View>
       </ScrollView>
     )
@@ -86,7 +84,6 @@ const styles = StyleSheet.create({
        alignItems:'center',
        padding: 20,
     },
-
     text:{
        color:'gray',
        marginVertical:10, 
