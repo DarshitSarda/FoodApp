@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import { View, Text, Image, StyleSheet, useWindowDimensions, TextInput, ScrollView, Button} from 'react-native';
 import Logo from '../../../assets/images/Logo.png';
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import { useNavigation } from "@react-navigation/native";
 import DateTimePicker from '@react-native-community/datetimepicker';
-
+import { AuthContext } from "../../navigation/AuthProvider";
 
 
 const SignInScreen = () => {
@@ -18,18 +18,16 @@ const SignInScreen = () => {
     const [email,setEmail]=useState('');
     const [emailverified, setEmailVerified]=useState(false);
     const [passwordverified, setPasswordVerified]=useState(false);
-
-  {/*}
+    const {login}=useContext(AuthContext);
+  {/*
     const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
-
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate;
     setShow(false);
     setDate(currentDate);
   };
-
   const showMode = (currentMode) => {
     if (Platform.OS === 'android') {
       setShow(true);
@@ -37,11 +35,9 @@ const SignInScreen = () => {
     }
     setMode(currentMode);
   };
-
   const showDatepicker = () => {
     showMode('date');
   };
-
   const showTimepicker = () => {
     showMode('time');
   };
@@ -115,7 +111,7 @@ const SignInScreen = () => {
           }
         else {
             setError({field:'',message:''});
-            navigation.navigate("Bottom Nav");
+            login(email,password);
           
         }
       }
@@ -198,18 +194,15 @@ const SignInScreen = () => {
         value={email}
         onChangeText={value=>setEmail(value)}
         />
-
         {error.field==='email' && (
             <Text style={styles.error}>{error.message}</Text>
         )}
-
         <TextInput
         placeholder="Enter Password"
         style={styles.inputField}
         value={password}
         onChangeText={value=>setPassword(value)}
         />
-
         {error.field==='password' && (
             <Text style={styles.error}>{error.message}</Text>
         )} 

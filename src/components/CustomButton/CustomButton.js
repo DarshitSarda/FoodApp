@@ -24,6 +24,10 @@ container: {
     borderRadius: 5,
     alignItems:'center',
     marginTop: 10,
+    borderColor: "#ff5800",
+    borderWidth: 0.75
+    
+    
 },
 
 text:{
