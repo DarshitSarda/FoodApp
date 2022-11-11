@@ -8,6 +8,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { AuthContext } from "../../navigation/AuthProvider";
 
 
+
 const SignInScreen = () => {
 
     {/*}
@@ -238,6 +239,12 @@ const SignInScreen = () => {
         <CustomButton 
         text="Sign In" 
         onPress={onSignInPressed}/>
+
+        <CustomButton text="Sign In with Google" 
+        onPress={onSignInGoogle}
+        bgColor="#f8eeec"
+        fgColor="#dd4d44"
+        />
         
         <Text style={styles.forgot} onPress={onForgotPasswordPressed}>Forgot Password?</Text>
         
@@ -253,13 +260,10 @@ const SignInScreen = () => {
         bgColor="#e7eaf4"
         fgColor="#4765a9"
         />
+  */}
         
-        <CustomButton text="Sign In with Google" 
-        onPress={onSignInGoogle}
-        bgColor="#f8eeec"
-        fgColor="#dd4d44"
-        />
-        */}
+        
+        
 
       </View>
       </ScrollView>
