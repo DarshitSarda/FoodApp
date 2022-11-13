@@ -182,18 +182,19 @@ const HomePage = () => {
   return (
     <View style={styles.root}>
       <Text style={styles.mainHeader}>RECIPES</Text>
+      <Button
+      style={styles.button}
+      color="red"
+      title="Click here to logout"
+      onPress={()=> logout()}
+      />
       <FlatList
         keyExtractor={item => item.id}
         data={myData}
         renderItem={showUserData}
         showsVerticalScrollIndicator={false}
       />
-      <Button
-      style={styles.button}
-      color="red"
-      title="Logout"
-      onPress={()=> logout()}
-      />
+      
     </View>
   );
 };
@@ -206,12 +207,12 @@ const styles = StyleSheet.create({
     width: '100%',
     minHeight: '100%',
     paddingVertical: 50,
-    backgroundColor: '#ebedee',
+    backgroundColor: '#293462',
   },
   card: {
     width: 350,
     height: 350,
-    backgroundColor: '#abf7b1',
+    backgroundColor: '#293462',
     borderRadius: 10,
     margin: 20,
     shadowColor: 'black',
@@ -219,7 +220,6 @@ const styles = StyleSheet.create({
     elevation: 6,
     shadowRadius: 15,
     shadowOffset: {width: 1, height: 13},
-    paddingBottom: 20
   },
   bioDataContainer: {
     width: '100%',
@@ -227,13 +227,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#48a84a',
+    backgroundColor: '#EC9B3B',
     paddingVertical: 10,
   },
   idNumber: {
     fontSize: 20,
     color: 'rgba(255, 255, 255, 0.5)',
     paddingRight: 10,
+    textAlign:'center'
   },
   bioData: {
     fontSize: 20,
@@ -241,11 +242,14 @@ const styles = StyleSheet.create({
     fontFamily: 'JosefinSans_400Regular',
   },
   mainHeader: {
-    fontSize: 30,
-    color: '#3d8f3e',
+    fontSize: 60,
+    color: '#990000',
     textAlign: 'center',
     paddingTop: 20,
-    fontStyle:'italic',
+    fontWeight:'bold',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: {width: 3, height: 5},
+    textShadowRadius: 10
   },
   imgContainer: {
     padding: 10,
@@ -256,12 +260,12 @@ const styles = StyleSheet.create({
   },
   mainContain: {
     padding: 10,
-    backgroundColor: '#2e6b2f',
+    backgroundColor: '#F24C4C',
     borderBottomLeftRadius: 5,
     borderBottomRightRadius: 5,
   },
   myName: {
-    fontSize: 14,
+    fontSize: 13,
     color: '#fff',
     marginBottom: 10,
     alignSelf: 'flex-start',

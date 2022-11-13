@@ -9,6 +9,7 @@ import { AuthContext } from "../../navigation/AuthProvider";
 
 
 
+
 const SignInScreen = () => {
 
     {/*}
@@ -19,7 +20,7 @@ const SignInScreen = () => {
     const [email,setEmail]=useState('');
     const [emailverified, setEmailVerified]=useState(false);
     const [passwordverified, setPasswordVerified]=useState(false);
-    const {login}=useContext(AuthContext);
+    const {login, googleLogin}=useContext(AuthContext);
   {/*
     const [date, setDate] = useState(new Date(1598051730000));
   const [mode, setMode] = useState('date');
@@ -241,7 +242,7 @@ const SignInScreen = () => {
         onPress={onSignInPressed}/>
 
         <CustomButton text="Sign In with Google" 
-        onPress={onSignInGoogle}
+        onPress={()=>googleLogin()}
         bgColor="#f8eeec"
         fgColor="#dd4d44"
         />
