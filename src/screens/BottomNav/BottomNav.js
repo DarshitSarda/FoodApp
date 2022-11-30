@@ -26,7 +26,7 @@ const BottomNav = () => {
                 iconName = focused ? 'fast-food' : 'fast-food-outline';
               }
               else if (route.name === 'Support') {
-                iconName = focused ? 'cog-sharp' : 'cog-outline';}
+                iconName = focused ? 'ios-search-circle-sharp' : 'ios-search-circle-outline';}
                 else if (route.name === 'Favourites') {
                     iconName = focused ? 'heart' : 'heart-outline';}
       

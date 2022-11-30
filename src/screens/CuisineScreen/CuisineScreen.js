@@ -1,22 +1,24 @@
 import React from "react";
-import {View,Text,StyleSheet} from 'react-native';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Screen1 from "./Screen1";
+import Indian from "./Indian";
+import Mexican from "./Mexican";
+import Spanish from "./Spanish";
+import Chinese from "./Chinese";
+const Stack = createNativeStackNavigator();
+
 const CuisineScreen = () => {
 return(
-    <View style={styles.root}>
-        <Text style={styles.text}>Cuisine Screen</Text>
-    </View>
+    
+            <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Screen name="Screen1" component={Screen1}/>
+            <Stack.Screen name="Indian" component={Indian}/>
+            <Stack.Screen name="Mexican" component={Mexican}/>
+            <Stack.Screen name="Spanish" component={Spanish}/>
+            <Stack.Screen name="Chinese" component={Chinese}/>
+            </Stack.Navigator>
 )
 }
-const styles=StyleSheet.create({
-    root:{
-        alignItems:'center',
-        flex:1,
-        justifyContent:'center'
-    },
-    text:{
-        fontSize: 50,
-        color:'#000000'
-    }
-})
+
 
 export default CuisineScreen

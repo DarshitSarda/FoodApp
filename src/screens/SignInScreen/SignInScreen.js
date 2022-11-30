@@ -144,7 +144,7 @@ const SignInScreen = () => {
         console.warn('Signing in with Facebook')
     };
     const onSignInGoogle = () =>{
-        console.warn('Signing in with Google')
+        googleLogin();
     };
 
     return (
@@ -239,10 +239,11 @@ const SignInScreen = () => {
 
         <CustomButton 
         text="Sign In" 
-        onPress={onSignInPressed}/>
+        onPress={onSignInPressed}
+        />
 
         <CustomButton text="Sign In with Google" 
-        onPress={()=>googleLogin()}
+        onPress={onSignInGoogle}
         bgColor="#f8eeec"
         fgColor="#dd4d44"
         />
