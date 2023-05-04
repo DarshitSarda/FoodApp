@@ -6,7 +6,7 @@
   <tr>
     <td>Sign In Screen</td>
     <td>Sign Up Screen</td>
-    <td>Cuisines Page</td>
+    <td>Homepage</td>
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/114094669/236212717-33c78cab-21aa-4e7b-a50d-ac64e844ffa4.png" width=400 height=600></td>
@@ -20,9 +20,9 @@
  
  <table>
   <tr>
-    <td>Home Screen</td>
-    <td>Italian Cuisine</td>
-    <td>French Cuisine</td>
+    <td>Cuisine Screen</td>
+    <td>Indian Cuisine</td>
+    <td>Mexican Cuisine</td>
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/114094669/236212806-b3a37e56-7584-4d04-94a7-5ded62838208.png" width=400 height=600></td>
@@ -34,9 +34,9 @@
  
   <table>
   <tr>
+    <td>Spanish Cuisine</td>
     <td>Chinese Cuisine</td>
-    <td>Indian Cuisine</td>
-    <td>Japanese Cuisine</td>
+    <td>Search Cuisine</td>
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/114094669/236212836-39d6ab8c-29ff-4269-a3d7-e9d89a68ee41.png" width=400 height=600></td>
@@ -47,9 +47,9 @@
  
  <table>
   <tr>
-    <td>Chinese Cuisine</td>
-    <td>Indian Cuisine</td>
-    <td>Japanese Cuisine</td>
+    <td>Favoruites</td>
+    <td>Forgot Password</td>
+    <td>Searching a cuisine</td>
   </tr>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/114094669/236212864-10bb6267-40d3-4ba4-a160-b3dc333b947f.png" width=400 height=600></td>
